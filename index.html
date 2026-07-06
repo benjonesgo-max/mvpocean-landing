@@ -116,9 +116,24 @@
   .contact h2{font-size:clamp(30px,4vw,52px);max-width:18ch;margin:14px auto 16px}
   .contact p{color:var(--ink-soft);font-size:18px;max-width:52ch;margin:0 auto 30px}
 
-  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--ink-soft);font-size:14px}
-  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-  .note{max-width:var(--maxw);margin:0 auto;padding:14px 24px;font-size:12.5px;color:#9a8a5f;background:#fdf7e6;border:1px dashed #e7d59a;border-radius:12px}
+  /* FOUNDER */
+  .founder-card{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .fc-avatar{flex:0 0 auto;width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:#fff;background:linear-gradient(150deg,var(--cyan),var(--violet))}
+  .fc-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600}
+  .fc-role{color:var(--blue);font-weight:600;font-size:13.5px;margin-top:2px}
+  .fc-note{color:var(--ink-soft);font-size:14.5px;margin-top:10px}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:58px 0 32px;color:var(--ink-soft);font-size:14px;background:#fff}
+  .fgrid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr 1fr;gap:34px}
+  .fbrand p{margin:12px 0 10px;max-width:34ch;font-size:13.5px;line-height:1.6}
+  .fcol{display:flex;flex-direction:column;gap:9px}
+  .fcol h4{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:4px}
+  .fcol a,.fbrand a{color:var(--ink-soft);font-size:13.5px;transition:.15s}
+  .fcol a:hover,.fbrand a:hover{color:var(--blue)}
+  .fbottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:42px;padding-top:22px;border-top:1px solid var(--line);font-size:13px}
+  .fbottom a{color:var(--ink-soft)}
+  .fbottom a:hover{color:var(--blue)}
 
   .rv{opacity:0;transform:translateY(18px);transition:.7s cubic-bezier(.2,.7,.2,1)}
   .rv.in{opacity:1;transform:none}
@@ -129,8 +144,10 @@
     .stats{grid-template-columns:repeat(3,1fr)}
     .grid-cards{grid-template-columns:1fr}
     .why{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr 1fr;gap:26px}
+    .fbrand{grid-column:1 / -1}
   }
-  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 56px}}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 56px}.fgrid{grid-template-columns:1fr}.founder-card{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -144,6 +161,7 @@
         <a href="#approach">Approach</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#flagship">Proof</a>
+        <a href="#founder">Founder</a>
         <a href="#contact">Contact</a>
       </div>
       <a class="btn btn-primary" href="#contact">Get in touch</a>
@@ -152,7 +170,7 @@
   </div>
   <div id="m" style="display:none;border-top:1px solid var(--line);background:var(--bg)">
     <div class="wrap" style="padding:14px 24px;display:flex;flex-direction:column;gap:12px;font-weight:500">
-      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#contact">Contact</a>
+      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#founder">Founder</a><a href="#contact">Contact</a>
     </div>
   </div>
 </header>
@@ -178,7 +196,7 @@
       <div class="rv">
         <div class="eyebrow">The approach</div>
         <h2 class="lead">A repeatable way to build businesses — in any industry.</h2>
-        <p class="maxread">Most studios bet on one idea. We built a playbook instead: take a concept to a working MVP quickly and cheaply, put it in front of real customers, and let demand decide. The result is a portfolio of shots on goal that share the same lean, AI-native way of building — not the same industry.</p>
+        <p class="maxread">Most studios bet on one idea. We built a playbook instead: take a concept to a working MVP quickly and efficiently, put it in front of real customers, and let demand decide. The result is a portfolio of shots on goal that share the same lean, AI-native way of building — not the same industry.</p>
         <div class="flow">
           <span class="chip">Spot an opening</span><span class="chip">Ship an MVP</span><span class="chip">Put it to market</span><span class="chip">Validate demand</span><span class="chip">Double down on winners</span>
         </div>
@@ -263,13 +281,35 @@
   </section>
 
   <!-- WHY NOW -->
-  <section class="blk" style="background:#F4F7F6;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <section id="why" class="blk" style="background:#F4F7F6;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
     <div class="wrap">
-      <div class="rv"><div class="eyebrow">Why now</div><h2 class="lead">Building a business has never been this cheap or this fast.</h2></div>
+      <div class="rv"><div class="eyebrow">Why now</div><h2 class="lead">The studio model has never made more sense than it does today.</h2></div>
       <div class="why">
-        <div class="rv"><div class="n" style="color:var(--cyan)">01</div><h3>AI-native from day one</h3><p>What used to need a team now runs as automated pipelines — one operator ships what once took twenty, so each new shot costs a fraction of what it used to.</p></div>
-        <div class="rv"><div class="n" style="color:var(--coral)">02</div><h3>Speed is the moat</h3><p>We get to a real, in-market MVP in weeks. Validating demand fast means we kill losers early and pour fuel on winners before anyone else moves.</p></div>
+        <div class="rv"><div class="n" style="color:var(--cyan)">01</div><h3>AI-native from day one</h3><p>Automated, AI-native pipelines let a small team do what used to take twenty — so we can run several ventures at once without shortchanging the care and execution each one demands.</p></div>
+        <div class="rv"><div class="n" style="color:var(--coral)">02</div><h3>First to market, then defensible</h3><p>Getting there first only opens a lead. The durable moat is what we build with it — network effects, key relationships, or proprietary data and IP — and which one matters depends on the venture.</p></div>
         <div class="rv"><div class="n" style="color:var(--teal)">03</div><h3>A portfolio beats a bet</h3><p>Many shots on goal, one shared engine — the studio's odds compound where a single-company bet can only win or lose once.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section id="founder" class="wrap blk">
+    <div class="split">
+      <div class="rv">
+        <div class="eyebrow">The founder</div>
+        <h2 class="lead">Built and run by Ben Jones.</h2>
+        <p class="maxread">MVP Ocean is a founder-led studio. I'm Ben — a Vancouver-based operator with a finance and data background who spends his time turning ideas into working businesses and putting capital and focus behind the ones that earn it. Vantage is the current proof; the rest of the portfolio is where the playbook goes next.</p>
+        <div style="margin-top:22px">
+          <a class="btn btn-ghost btn-lg" href="https://benjones-invitation.netlify.app" target="_blank" rel="noopener">Read more about me →</a>
+        </div>
+      </div>
+      <div class="rv founder-card">
+        <div class="fc-avatar">BJ</div>
+        <div>
+          <div class="fc-name">Ben Jones</div>
+          <div class="fc-role">Founder · MVP Ocean</div>
+          <p class="fc-note">Operator, builder, and the person behind every venture on this page. More on the personal site — by invitation.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -281,7 +321,7 @@
       <h2 class="rv">Let's talk.</h2>
       <p class="rv">Want a closer look at the studio and the portfolio? Reach out directly for a live walkthrough of what we're building.</p>
       <div class="rv cta-row">
-        <a class="btn btn-primary btn-lg" href="mailto:[hello@mvpocean.com]?subject=MVP%20Ocean">Email us</a>
+        <a class="btn btn-primary btn-lg" href="mailto:hello@mvpocean.com?subject=MVP%20Ocean">Email us</a>
         <a class="btn btn-ghost btn-lg" href="https://app.mvpocean.com">Explore the flagship</a>
       </div>
     </div>
@@ -289,9 +329,46 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div class="brand" style="font-size:16px"><span class="mark"></span> MVP Ocean</div>
-    <div>© <span id="yr"></span> MVP Ocean · A venture studio · <a class="accent" href="mailto:[hello@mvpocean.com]">[hello@mvpocean.com]</a></div>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="brand" style="font-size:18px"><span class="mark"></span> MVP Ocean</div>
+        <p>A venture studio. One playbook, many shots on goal — built lean and backed by proof.</p>
+        <a href="mailto:hello@mvpocean.com">hello@mvpocean.com</a>
+      </div>
+      <div class="fcol">
+        <h4>Studio</h4>
+        <a href="#approach">Approach</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#flagship">Proof</a>
+        <a href="#why">Why now</a>
+      </div>
+      <div class="fcol">
+        <h4>Ventures</h4>
+        <a href="https://app.mvpocean.com" target="_blank" rel="noopener">Vantage</a>
+        <a href="#portfolio">Tiny Talkers</a>
+        <a href="#portfolio">Everlawn</a>
+        <a href="#portfolio">Afterword</a>
+        <a href="#portfolio">Sideline</a>
+        <a href="#portfolio">Riptide</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+        <a href="https://benjones-invitation.netlify.app" target="_blank" rel="noopener">About Ben</a>
+      </div>
+      <div class="fcol">
+        <h4>Connect</h4>
+        <a href="mailto:hello@mvpocean.com">Email</a>
+        <a href="https://app.mvpocean.com" target="_blank" rel="noopener">Vantage app</a>
+        <a href="https://benjones-invitation.netlify.app" target="_blank" rel="noopener">Personal site</a>
+      </div>
+    </div>
+    <div class="fbottom">
+      <div>© <span id="yr"></span> MVP Ocean · A venture studio · Vancouver, BC</div>
+      <div><a href="#top">Back to top ↑</a></div>
+    </div>
   </div>
 </footer>
 
