@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MVP Ocean — Many shots on goal.</title>
-<meta name="description" content="MVP Ocean is a venture studio. We build businesses fast across many markets and back the ones that work. Currently raising a Series A." />
+<meta name="description" content="MVP Ocean is a venture studio. We build businesses fast across many markets and back the ones that work." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%231FA9E6'/><stop offset='0.5' stop-color='%230FB39B'/><stop offset='1' stop-color='%237C6BF0'/></linearGradient></defs><circle cx='16' cy='16' r='15' fill='url(%23g)'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -111,19 +112,6 @@
   .why p{color:var(--ink-soft);font-size:15px;margin-top:8px}
   .why .n{font-family:'Fraunces',serif;font-size:28px;font-weight:600}
 
-  /* RAISE */
-  .raise{background:linear-gradient(155deg,#0b2338,#0a1a2a 55%,#123a3a);color:#fff;border-radius:24px;padding:52px 44px;position:relative;overflow:hidden}
-  .raise::after{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(31,169,230,.3),transparent 65%)}
-  .raise::before{content:"";position:absolute;left:-70px;bottom:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,89,.2),transparent 66%)}
-  .raise .eyebrow{color:#7fe9d3;position:relative}
-  .raise h2{font-size:clamp(28px,3.4vw,40px);margin:12px 0 10px;max-width:24ch;position:relative}
-  .raise p.rl{color:#bcd0dc;max-width:62ch;font-size:16.5px;position:relative}
-  .use{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;position:relative}
-  .use div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:20px}
-  .use h4{font-size:15px;color:#fff;font-family:'Inter',sans-serif}
-  .use p{color:#9db2c0;font-size:13.5px;margin-top:6px}
-  .phw{color:#ffd47f;font-weight:600}
-
   .contact{text-align:center;padding:96px 0}
   .contact h2{font-size:clamp(30px,4vw,52px);max-width:18ch;margin:14px auto 16px}
   .contact p{color:var(--ink-soft);font-size:18px;max-width:52ch;margin:0 auto 30px}
@@ -140,8 +128,7 @@
     .split{grid-template-columns:1fr;gap:32px}
     .stats{grid-template-columns:repeat(3,1fr)}
     .grid-cards{grid-template-columns:1fr}
-    .why,.use{grid-template-columns:1fr}
-    .raise{padding:38px 24px}
+    .why{grid-template-columns:1fr}
   }
   @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 56px}}
 </style>
@@ -157,7 +144,6 @@
         <a href="#approach">Approach</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#flagship">Proof</a>
-        <a href="#raise">The raise</a>
         <a href="#contact">Contact</a>
       </div>
       <a class="btn btn-primary" href="#contact">Get in touch</a>
@@ -166,7 +152,7 @@
   </div>
   <div id="m" style="display:none;border-top:1px solid var(--line);background:var(--bg)">
     <div class="wrap" style="padding:14px 24px;display:flex;flex-direction:column;gap:12px;font-weight:500">
-      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#raise">The raise</a><a href="#contact">Contact</a>
+      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#contact">Contact</a>
     </div>
   </div>
 </header>
@@ -176,11 +162,11 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <span class="pill"><span class="dot"></span> A venture studio · currently raising a Series A</span>
+      <span class="pill"><span class="dot"></span> A venture studio · building many businesses at once</span>
       <h1>One playbook. <span class="grad">Many shots</span> on goal.</h1>
       <p class="sub">MVP Ocean builds businesses. We take an idea to a live, revenue-ready MVP fast — across whatever market it lives in — then put capital and focus behind the ones that work.</p>
       <div class="cta-row">
-        <a class="btn btn-primary btn-lg" href="#raise">See the opportunity →</a>
+        <a class="btn btn-primary btn-lg" href="#flagship">See the proof →</a>
         <a class="btn btn-ghost btn-lg" href="#portfolio">Meet the portfolio</a>
       </div>
     </div>
@@ -222,27 +208,32 @@
         <div class="pcard rv" style="--c:var(--coral)">
           <div class="top"><div class="ic">🎤</div><span class="tag build">In build</span></div>
           <h3>Tiny Talkers</h3><div class="role">Kids' public-speaking platform</div>
-          <p>A platform that helps children build confidence and communication skills through guided public speaking. <span class="ph">[one-line hook + stage to confirm]</span></p>
+          <p>A playful platform that turns kids into confident speakers — guided lessons, live practice, and real stages that build communication skills early.</p>
         </div>
         <div class="pcard rv" style="--c:var(--teal)">
           <div class="top"><div class="ic">▦</div><span class="tag early">Early</span></div>
-          <h3>[Artificial-turf venture]</h3><div class="role">Home & outdoor services</div>
-          <p>Artificial-lawn supply and install — a high-margin services play. <span class="ph">[confirm name + one-liner]</span></p>
+          <h3>Everlawn</h3><div class="role">Home & outdoor services</div>
+          <p>Premium artificial-lawn supply and installation — a high-margin home-services play with fast, repeatable jobs and year-round demand.</p>
         </div>
         <div class="pcard rv" style="--c:var(--violet)">
-          <div class="top"><div class="ic">§</div><span class="tag early">Early</span></div>
-          <h3>[Professional-services venture]</h3><div class="role">Professional services</div>
-          <p><span class="ph">[Confirm what this is — e.g. a legal / professional-services business — and a one-line description.]</span></p>
+          <div class="top"><div class="ic">❦</div><span class="tag early">Early</span></div>
+          <h3>Afterword</h3><div class="role">Digital estate services</div>
+          <p>Digital estate management — closing, transferring, and preserving someone's online accounts and assets after they're gone, so families don't have to.</p>
+        </div>
+        <div class="pcard rv" style="--c:var(--cyan)">
+          <div class="top"><div class="ic">⚑</div><span class="tag early">Early</span></div>
+          <h3>Sideline</h3><div class="role">Officiating academy & staffing</div>
+          <p>Train, certify, and place sports officials — solving the chronic referee shortage every youth league is fighting.</p>
+        </div>
+        <div class="pcard rv" style="--c:#3CA35B">
+          <div class="top"><div class="ic">≈</div><span class="tag early">Early</span></div>
+          <h3>Riptide</h3><div class="role">Youth aquatics & water polo</div>
+          <p>Coaching, combines, and technique tools that move kids from swim lessons to competitive water polo.</p>
         </div>
         <div class="pcard rv" style="--c:var(--amber)">
           <div class="top"><div class="ic">＋</div><span class="tag build">Pipeline</span></div>
           <h3>Next bets</h3><div class="role">Always building</div>
           <p>New ideas move through the same playbook continuously — the ones that find demand graduate into the portfolio.</p>
-        </div>
-        <div class="pcard rv" style="--c:var(--cyan)">
-          <div class="top"><div class="ic">◇</div><span class="tag build">You</span></div>
-          <h3>Back the studio</h3><div class="role">Series A</div>
-          <p>This round funds the engine behind all of it — so more shots reach the market, faster.</p>
         </div>
       </div>
     </div>
@@ -252,7 +243,7 @@
   <section id="flagship" class="wrap blk">
     <div class="rv" style="text-align:center;max-width:60ch;margin:0 auto 8px">
       <div class="eyebrow">Proof it works · flagship</div>
-      <h2 class="lead" style="margin:14px auto 10px">Vantage is the playbook, already live.</h2>
+      <h2 class="lead" style="margin:14px auto 10px">Vantage proves the playbook — live and in daily use.</h2>
       <p class="maxread" style="margin:0 auto 6px">Our first venture reconciles the entire Canadian public-markets universe into one canonical layer — built lean, in market, and validated on real data.</p>
     </div>
     <div class="band rv">
@@ -283,32 +274,14 @@
     </div>
   </section>
 
-  <!-- RAISE -->
-  <section id="raise" class="wrap blk">
-    <div class="raise rv">
-      <div class="eyebrow">The raise · Series A</div>
-      <h2>Raising <span class="phw">[$X.X M]</span> to take more shots on goal — faster.</h2>
-      <p class="rl">We've proven the playbook with a live, revenue-ready flagship and a pipeline of ventures behind it. This round funds the studio itself: the team, the build engine, and the go-to-market to move more ideas from MVP to real business.</p>
-      <div class="use">
-        <div><h4>Build engine & team</h4><p><span class="phw">[~XX%]</span> — the people and tooling that ship each new venture.</p></div>
-        <div><h4>Go-to-market</h4><p><span class="phw">[~XX%]</span> — turn validated MVPs into paying customers and repeatable revenue.</p></div>
-        <div><h4>New shots</h4><p><span class="phw">[~XX%]</span> — seed capital to launch and test the next wave of ideas.</p></div>
-      </div>
-      <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;position:relative">
-        <a class="btn btn-primary btn-lg" href="#contact">Request the deck & data room</a>
-        <a class="btn btn-ghost btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.28)" href="https://app.mvpocean.com">See the flagship live</a>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="wrap">
       <div class="eyebrow rv">Get in touch</div>
-      <h2 class="rv">Let's talk about the round.</h2>
-      <p class="rv">For the full Series A deck, the data room, and a live walkthrough of the portfolio, reach out directly.</p>
+      <h2 class="rv">Let's talk.</h2>
+      <p class="rv">Want a closer look at the studio and the portfolio? Reach out directly for a live walkthrough of what we're building.</p>
       <div class="rv cta-row">
-        <a class="btn btn-primary btn-lg" href="mailto:[hello@mvpocean.com]?subject=MVP%20Ocean%20Series%20A">Email us</a>
+        <a class="btn btn-primary btn-lg" href="mailto:[hello@mvpocean.com]?subject=MVP%20Ocean">Email us</a>
         <a class="btn btn-ghost btn-lg" href="https://app.mvpocean.com">Explore the flagship</a>
       </div>
     </div>
