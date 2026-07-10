@@ -116,12 +116,6 @@
   .contact h2{font-size:clamp(30px,4vw,52px);max-width:18ch;margin:14px auto 16px}
   .contact p{color:var(--ink-soft);font-size:18px;max-width:52ch;margin:0 auto 30px}
 
-  /* FOUNDER */
-  .founder-card{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
-  .fc-avatar{flex:0 0 auto;width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:#fff;background:linear-gradient(150deg,var(--cyan),var(--violet))}
-  .fc-name{font-family:'Fraunces',serif;font-size:20px;font-weight:600}
-  .fc-role{color:var(--blue);font-weight:600;font-size:13.5px;margin-top:2px}
-  .fc-note{color:var(--ink-soft);font-size:14.5px;margin-top:10px}
 
   /* FOOTER */
   footer{border-top:1px solid var(--line);padding:58px 0 32px;color:var(--ink-soft);font-size:14px;background:#fff}
@@ -147,7 +141,7 @@
     .fgrid{grid-template-columns:1fr 1fr;gap:26px}
     .fbrand{grid-column:1 / -1}
   }
-  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 56px}.fgrid{grid-template-columns:1fr}.founder-card{flex-direction:column}}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 56px}.fgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -161,7 +155,6 @@
         <a href="#approach">Approach</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#flagship">Proof</a>
-        <a href="#founder">Founder</a>
         <a href="#contact">Contact</a>
       </div>
       <a class="btn btn-primary" href="#contact">Get in touch</a>
@@ -170,7 +163,7 @@
   </div>
   <div id="m" style="display:none;border-top:1px solid var(--line);background:var(--bg)">
     <div class="wrap" style="padding:14px 24px;display:flex;flex-direction:column;gap:12px;font-weight:500">
-      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#founder">Founder</a><a href="#contact">Contact</a>
+      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#contact">Contact</a>
     </div>
   </div>
 </header>
@@ -292,27 +285,6 @@
     </div>
   </section>
 
-  <!-- FOUNDER -->
-  <section id="founder" class="wrap blk">
-    <div class="split">
-      <div class="rv">
-        <div class="eyebrow">The founder</div>
-        <h2 class="lead">Built and run by Ben Jones.</h2>
-        <p class="maxread">MVP Ocean is a founder-led studio. I'm Ben — a Vancouver-based operator with a finance and data background who spends his time turning ideas into working businesses and putting capital and focus behind the ones that earn it. Vantage is the current proof; the rest of the portfolio is where the playbook goes next.</p>
-        <div style="margin-top:22px">
-          <a class="btn btn-ghost btn-lg" href="https://benjones-portfolio.netlify.app/" target="_blank" rel="noopener">Read more about me →</a>
-        </div>
-      </div>
-      <div class="rv founder-card">
-        <div class="fc-avatar">BJ</div>
-        <div>
-          <div class="fc-name">Ben Jones</div>
-          <div class="fc-role">Founder · MVP Ocean</div>
-          <p class="fc-note">Operator, builder, and the person behind every venture on this page. More on the personal site.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
@@ -354,15 +326,12 @@
       </div>
       <div class="fcol">
         <h4>Company</h4>
-        <a href="#founder">Founder</a>
         <a href="#contact">Contact</a>
-        <a href="https://benjones-portfolio.netlify.app/" target="_blank" rel="noopener">About Ben</a>
       </div>
       <div class="fcol">
         <h4>Connect</h4>
         <a href="mailto:hello@mvpocean.com">Email</a>
         <a href="https://app.mvpocean.com" target="_blank" rel="noopener">Vantage app</a>
-        <a href="https://benjones-portfolio.netlify.app/" target="_blank" rel="noopener">Personal site</a>
       </div>
     </div>
     <div class="fbottom">
