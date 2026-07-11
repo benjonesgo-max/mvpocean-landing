@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%23FF6B4A'/><circle cx='11' cy='21' r='4' fill='%232B2140'/><circle cx='21' cy='21' r='4' fill='%232B2140'/><rect x='7' y='9' width='18' height='9' rx='3' fill='%23FFF8EF'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
     --bg:#FFF8EF;
@@ -16,10 +16,12 @@
     --ink-soft:#6B6280;
     --line:#F0E5D4;
     --coral:#FF6B4A;
+    --coral-deep:#C94320; /* coral dark enough for white text (4.88:1) — filled buttons, focus rings */
     --sun:#FFB33C;
     --teal:#12B8A0;
     --sky:#3FA7E8;
-    --grape:#8A6BF0;
+    --grape:#6A50D0;
+    --grape-tint:#ECE6FC;
     --card:#FFFFFF;
     --shadow:0 2px 4px rgba(43,33,64,.05), 0 16px 36px rgba(43,33,64,.08);
     --radius:20px;
@@ -27,7 +29,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:'Instrument Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.06;letter-spacing:-.01em}
@@ -39,8 +41,8 @@
   .studio{font-size:12.5px;color:var(--ink-soft);font-weight:500}
   .studio a{color:var(--sky);font-weight:600}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:999px;padding:13px 24px;transition:.2s;cursor:pointer;border:2px solid transparent}
-  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(255,107,74,.35)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,107,74,.45)}
+  .btn-primary{background:var(--coral-deep);color:#fff;box-shadow:0 8px 20px rgba(201,67,32,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(201,67,32,.45)}
   .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
   .btn-ghost:hover{border-color:var(--sun)}
 
@@ -52,7 +54,7 @@
   .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);box-shadow:var(--shadow)}
   .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px rgba(255,179,60,.25)}
   .hero h1{font-size:clamp(42px,6.4vw,76px);margin:26px auto 20px;max-width:14ch}
-  .grad{background:linear-gradient(94deg,var(--coral),var(--sun) 55%,var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .accent{color:var(--coral-deep)} /* raw coral is 2.7:1 on the cream bg — too low even at display size */
   .hero p.sub{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:56ch;margin:0 auto 32px}
   .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
@@ -98,6 +100,12 @@
   .rv{opacity:0;transform:translateY(18px);transition:.7s cubic-bezier(.2,.7,.2,1)}
   .rv.in{opacity:1;transform:none}
 
+  /* A11Y */
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--coral-deep);outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  }
+
   @media(max-width:900px){
     .week{grid-template-columns:repeat(2,1fr)}
     .three{grid-template-columns:1fr}
@@ -124,7 +132,7 @@
   <section class="hero">
     <div class="wrap">
       <span class="pill"><span class="dot"></span> Early concept · Tsawwassen &amp; South Delta, BC</span>
-      <h1>After-school, <span class="grad">unboxed.</span></h1>
+      <h1>After-school, <span class="accent">unboxed.</span></h1>
       <p class="sub">Enrich is after-school care on wheels. We pick kids up at the bell and take them somewhere worth going — swimming, music, art, sport, making things — a different adventure every day, back by 5.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#waitlist">Join the waitlist →</a>
@@ -158,11 +166,11 @@
         <p class="maxread" style="margin:0 auto">We meet kids at the school door, take attendance, and roll. Parents get a ping at pickup and at drop-off. Rotations change with the season.</p>
       </div>
       <div class="week">
-        <div class="day rv"><span class="lbl" style="background:#FDE8E2;color:#D5502F">Mon</span><div class="emoji">🏊</div><h3>Splash</h3><p>Swim lessons at the community pool</p></div>
-        <div class="day rv"><span class="lbl" style="background:#FFF1D6;color:#B5872B">Tue</span><div class="emoji">🎨</div><h3>Studio</h3><p>Art &amp; making at the rec-centre studio</p></div>
-        <div class="day rv"><span class="lbl" style="background:#DDF5F0;color:#0A8F7A">Wed</span><div class="emoji">🎵</div><h3>Jam</h3><p>Music — rhythm, ukulele, sing-alongs</p></div>
+        <div class="day rv"><span class="lbl" style="background:#FDE8E2;color:#B03E20">Mon</span><div class="emoji">🏊</div><h3>Splash</h3><p>Swim lessons at the community pool</p></div>
+        <div class="day rv"><span class="lbl" style="background:#FFF1D6;color:#856318">Tue</span><div class="emoji">🎨</div><h3>Studio</h3><p>Art &amp; making at the rec-centre studio</p></div>
+        <div class="day rv"><span class="lbl" style="background:#DDF5F0;color:#076C5C">Wed</span><div class="emoji">🎵</div><h3>Jam</h3><p>Music — rhythm, ukulele, sing-alongs</p></div>
         <div class="day rv"><span class="lbl" style="background:#E2F1FC;color:#1E6FAE">Thu</span><div class="emoji">⚽</div><h3>Play</h3><p>Sport &amp; games — field, court, or rink</p></div>
-        <div class="day rv"><span class="lbl" style="background:#ECE6FC;color:#6A50D0">Fri</span><div class="emoji">🔭</div><h3>Wonder</h3><p>STEM, library quests &amp; nature walks</p></div>
+        <div class="day rv"><span class="lbl" style="background:var(--grape-tint);color:var(--grape)">Fri</span><div class="emoji">🔭</div><h3>Wonder</h3><p>STEM, library quests &amp; nature walks</p></div>
       </div>
     </div>
   </section>
