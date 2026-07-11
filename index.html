@@ -144,7 +144,7 @@
     .fgrid{grid-template-columns:1fr 1fr;gap:26px}
     .fbrand{grid-column:1 / -1}
   }
-  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.hero{padding:64px 0 56px}.fgrid{grid-template-columns:1fr}}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}.nav-signin{display:none}.hero{padding:64px 0 56px}.fgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -157,16 +157,16 @@
       <div class="navlinks">
         <a href="#approach">Approach</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#flagship">Proof</a>
+        <a href="#portal">Portal</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <div style="display:flex;gap:10px;align-items:center"><a class="btn btn-ghost nav-signin" href="https://app.mvpocean.com/login">Sign in</a> <a class="btn btn-primary" href="#contact">Get in touch</a></div>
       <button class="navtoggle" id="navtoggle" aria-label="menu" aria-expanded="false" aria-controls="m" onclick="toggleMenu()">☰</button>
     </nav>
   </div>
   <div id="m" style="display:none;border-top:1px solid var(--line);background:var(--bg)">
     <div class="wrap" style="padding:14px 24px;display:flex;flex-direction:column;gap:12px;font-weight:500">
-      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#flagship">Proof</a><a href="#contact">Contact</a>
+      <a href="#approach">Approach</a><a href="#portfolio">Portfolio</a><a href="#portal">Portal</a><a href="#contact">Contact</a><a href="https://app.mvpocean.com/login">Sign in</a>
     </div>
   </div>
 </header>
@@ -180,8 +180,8 @@
       <h1>One playbook. <span class="accent">Many shots</span> on goal.</h1>
       <p class="sub">MVP Ocean builds businesses. We take an idea to a live, revenue-ready MVP fast — across whatever market it lives in — then put capital and focus behind the ones that work.</p>
       <div class="cta-row">
-        <a class="btn btn-primary btn-lg" href="#flagship">See the proof →</a>
-        <a class="btn btn-ghost btn-lg" href="#portfolio">Meet the portfolio</a>
+        <a class="btn btn-primary btn-lg" href="#portfolio">Meet the portfolio</a>
+        <a class="btn btn-ghost btn-lg" href="https://app.mvpocean.com/login">Member sign-in</a>
       </div>
     </div>
   </section>
@@ -199,7 +199,7 @@
       </div>
       <div class="rv thesis-list">
         <div class="thesis-card"><h3>Many shots, shared playbook</h3><p>Every venture reuses the same build-and-validate engine, so the marginal cost of the next idea is low and each win compounds the studio.</p></div>
-        <div class="thesis-card"><h3>Not one industry</h3><p>From public-markets intelligence to consumer platforms to services — we follow demand, not a single vertical.</p></div>
+        <div class="thesis-card"><h3>Not one industry</h3><p>From market intelligence to consumer platforms to services — we follow demand, not a single vertical.</p></div>
         <div class="thesis-card"><h3>Proof before spend</h3><p>Capital goes to what's already pulling real customers. We fund traction, not slideware.</p></div>
       </div>
     </div>
@@ -211,13 +211,14 @@
       <div class="rv" style="text-align:center;max-width:60ch;margin:0 auto 40px">
         <div class="eyebrow">The portfolio</div>
         <h2 class="lead" style="margin:14px auto 16px">Many shots on goal.</h2>
-        <p class="maxread" style="margin:0 auto">A growing set of ventures, each at its own stage. One is live with real traction; others are in build. All share the same playbook.</p>
+        <p class="maxread" style="margin:0 auto">A growing set of ventures, each at its own stage. Every one starts the same way — pitched, stress-tested, and scored in our private evaluation portal before it earns a spot here.</p>
       </div>
       <div class="grid-cards">
-        <div class="pcard rv" style="--c:var(--blue)">
-          <div class="top"><div class="ic">◎</div><span class="tag live">Live</span></div>
-          <h3>Vantage</h3><div class="role">Public-markets intelligence · flagship</div>
-          <p>The reconciled data layer for Canadian public markets — issuers, auditors, filings and the relationships between them. Live, in daily use, and the proof this playbook works.</p>
+        <div class="pcard rv linked" style="--c:var(--blue)">
+          <div class="top"><div class="ic">◎</div><span class="tag live">Portal</span></div>
+          <h3>Vantage</h3><div class="role">Venture evaluation portal · private</div>
+          <p>Where ideas earn their place. Vantage is the studio's private portal for pitching, stress-testing, and validating new business models — the funnel behind everything else on this page.</p>
+          <a class="more" href="https://app.mvpocean.com/login">Member sign-in →</a>
         </div>
         <div class="pcard rv" style="--c:var(--coral)">
           <div class="top"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span class="tag build">In build</span></div>
@@ -259,26 +260,15 @@
     </div>
   </section>
 
-  <!-- FLAGSHIP PROOF -->
-  <section id="flagship" class="wrap blk">
+  <!-- PORTAL -->
+  <section id="portal" class="wrap blk">
     <div class="rv" style="text-align:center;max-width:60ch;margin:0 auto 8px">
-      <div class="eyebrow">Proof it works · flagship</div>
-      <h2 class="lead" style="margin:14px auto 10px">Vantage proves the playbook — live and in daily use.</h2>
-      <p class="maxread" style="margin:0 auto 6px">Our first venture reconciles the entire Canadian public-markets universe into one canonical layer — built lean, in market, and validated on real data.</p>
-    </div>
-    <div class="band rv">
-      <div class="eyebrow">Vantage — live metrics</div>
-      <div class="stats">
-        <div class="stat"><div class="num">4,359</div><div class="lbl">Active issuers reconciled</div></div>
-        <div class="stat"><div class="num">$122.5<span style="font-size:.55em">M</span></div><div class="lbl">Audit fees mapped</div></div>
-        <div class="stat"><div class="num">45</div><div class="lbl">Audit firms engaged</div></div>
-        <div class="stat"><div class="num">244</div><div class="lbl">Issuers w/ tracked auditor</div></div>
-        <div class="stat"><div class="num">63</div><div class="lbl">Capital pool companies</div></div>
-        <div class="stat"><div class="num">8</div><div class="lbl">Modules shipped</div></div>
-      </div>
+      <div class="eyebrow">The portal · members only</div>
+      <h2 class="lead" style="margin:14px auto 10px">Ideas compete. Vantage keeps score.</h2>
+      <p class="maxread" style="margin:0 auto 6px">Vantage is our private evaluation portal — where new business concepts are pitched, red-teamed, and validated on evidence before the studio commits a dollar. Sign in or create an account; access is granted on approval.</p>
     </div>
     <div style="text-align:center;margin-top:26px" class="rv">
-      <a class="btn btn-ghost btn-lg" href="https://app.mvpocean.com">Explore Vantage live →</a>
+      <a class="btn btn-primary btn-lg" href="https://app.mvpocean.com/login">Sign in / Create account →</a>
     </div>
   </section>
 
@@ -303,7 +293,7 @@
       <p class="rv">Want a closer look at the studio and the portfolio? Reach out directly for a live walkthrough of what we're building.</p>
       <div class="rv cta-row">
         <a class="btn btn-primary btn-lg" href="mailto:hello@mvpocean.com?subject=MVP%20Ocean">Email us</a>
-        <a class="btn btn-ghost btn-lg" href="https://app.mvpocean.com">Explore the flagship</a>
+        <a class="btn btn-ghost btn-lg" href="https://app.mvpocean.com/login">Member sign-in</a>
       </div>
     </div>
   </section>
@@ -321,12 +311,12 @@
         <h4>Studio</h4>
         <a href="#approach">Approach</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#flagship">Proof</a>
+        <a href="#portal">Portal</a>
         <a href="#why">Why now</a>
       </div>
       <div class="fcol">
         <h4>Ventures</h4>
-        <a href="https://app.mvpocean.com" target="_blank" rel="noopener">Vantage</a>
+        <a href="https://app.mvpocean.com/login" target="_blank" rel="noopener">Vantage</a>
         <a href="#portfolio">Tiny Talkers</a>
         <a href="#portfolio">Everlawn</a>
         <a href="#portfolio">Afterword</a>
@@ -341,7 +331,7 @@
       <div class="fcol">
         <h4>Connect</h4>
         <a href="mailto:hello@mvpocean.com">Email</a>
-        <a href="https://app.mvpocean.com" target="_blank" rel="noopener">Vantage app</a>
+        <a href="https://app.mvpocean.com/login" target="_blank" rel="noopener">Portal sign-in</a>
       </div>
     </div>
     <div class="fbottom">
