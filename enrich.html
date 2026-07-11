@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enrich — After-school, unboxed.</title>
+<meta name="description" content="Enrich is after-school care on wheels. We pick kids up at the bell and take them somewhere worth going — swimming, music, art, sport — every single day." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%23FF6B4A'/><circle cx='11' cy='21' r='4' fill='%232B2140'/><circle cx='21' cy='21' r='4' fill='%232B2140'/><rect x='7' y='9' width='18' height='9' rx='3' fill='%23FFF8EF'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FFF8EF;
+    --ink:#2B2140;
+    --ink-soft:#6B6280;
+    --line:#F0E5D4;
+    --coral:#FF6B4A;
+    --sun:#FFB33C;
+    --teal:#12B8A0;
+    --sky:#3FA7E8;
+    --grape:#8A6BF0;
+    --card:#FFFFFF;
+    --shadow:0 2px 4px rgba(43,33,64,.05), 0 16px 36px rgba(43,33,64,.08);
+    --radius:20px;
+    --maxw:1040px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.06;letter-spacing:-.01em}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,248,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;font-family:'Fraunces',serif}
+  .mark{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--coral),var(--sun));display:grid;place-items:center;font-size:16px}
+  .studio{font-size:12.5px;color:var(--ink-soft);font-weight:500}
+  .studio a{color:var(--sky);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:999px;padding:13px 24px;transition:.2s;cursor:pointer;border:2px solid transparent}
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 8px 20px rgba(255,107,74,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,107,74,.45)}
+  .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--sun)}
+
+  .hero{text-align:center;padding:88px 0 70px;position:relative}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+    radial-gradient(600px 320px at 50% -4%,rgba(255,179,60,.25),transparent 68%),
+    radial-gradient(480px 300px at 86% 14%,rgba(18,184,160,.16),transparent 70%),
+    radial-gradient(440px 300px at 10% 24%,rgba(255,107,74,.14),transparent 72%)}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);box-shadow:var(--shadow)}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px rgba(255,179,60,.25)}
+  .hero h1{font-size:clamp(42px,6.4vw,76px);margin:26px auto 20px;max-width:14ch}
+  .grad{background:linear-gradient(94deg,var(--coral),var(--sun) 55%,var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:56ch;margin:0 auto 32px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  section.blk{padding:72px 0}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+  .lead{font-size:clamp(27px,3.4vw,42px);margin:14px 0 14px;max-width:22ch}
+  .maxread{max-width:62ch;color:var(--ink-soft);font-size:17px}
+
+  .week{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;text-align:center;box-shadow:var(--shadow);transition:.22s}
+  .day:hover{transform:translateY(-4px) rotate(-1deg)}
+  .day .emoji{font-size:34px;line-height:1}
+  .day h3{font-size:16px;margin-top:12px}
+  .day .lbl{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;display:inline-block;padding:3px 10px;border-radius:999px}
+  .day p{font-size:13.5px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
+
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);border-top:5px solid var(--c,var(--coral))}
+  .tcard .n{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--c,var(--coral))}
+  .tcard h3{font-size:19px;margin:8px 0 8px}
+  .tcard p{color:var(--ink-soft);font-size:15px}
+
+  .band{background:linear-gradient(140deg,#33235c,#4a2d7a 55%,#215e63);color:#fff;border-radius:26px;padding:44px 34px;box-shadow:0 26px 60px rgba(43,33,64,.28);position:relative;overflow:hidden}
+  .band::after{content:"";position:absolute;right:-70px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,179,60,.3),transparent 65%)}
+  .band .eyebrow{color:#ffd9a0}
+  .band h2{font-size:clamp(24px,3vw,36px);margin:12px 0 10px;max-width:24ch}
+  .band p{color:#d8cfee;font-size:16px;max-width:60ch}
+  .mathrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;position:relative}
+  .m{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px;text-align:center}
+  .m .big{font-family:'Fraunces',serif;font-size:clamp(24px,3vw,34px);font-weight:600}
+  .m .sm{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#c9bfe6;margin-top:6px;line-height:1.4}
+
+  .safety{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .schip{font-size:14px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;box-shadow:var(--shadow)}
+
+  .contact{text-align:center;padding:88px 0}
+  .contact h2{font-size:clamp(30px,4vw,50px);max-width:20ch;margin:14px auto 16px}
+  .contact p{color:var(--ink-soft);font-size:17.5px;max-width:52ch;margin:0 auto 30px}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;color:var(--ink-soft);font-size:13.5px;background:#fff;text-align:center}
+  footer a{color:var(--sky);font-weight:600}
+
+  .rv{opacity:0;transform:translateY(18px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .week{grid-template-columns:repeat(2,1fr)}
+    .three{grid-template-columns:1fr}
+    .mathrow{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){.hero{padding:60px 0 48px}.week{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top"><span class="mark">🚐</span> Enrich</a>
+      <span class="studio">an <a href="/">MVP Ocean</a> venture</span>
+      <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill"><span class="dot"></span> Early concept · Tsawwassen &amp; South Delta, BC</span>
+      <h1>After-school, <span class="grad">unboxed.</span></h1>
+      <p class="sub">Enrich is after-school care on wheels. We pick kids up at the bell and take them somewhere worth going — swimming, music, art, sport, making things — a different adventure every day, back by 5.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#waitlist">Join the waitlist →</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="blk" style="padding-top:30px">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Why Enrich</div>
+        <h2 class="lead">The hours between 3 and 5 shouldn't be a waiting room.</h2>
+        <p class="maxread">Most after-school care is a gym floor and a bin of old toys — kids kill time until pickup. Those ten hours a week could be swim strokes, piano chords, and paint under fingernails instead. Enrich turns dead time into the richest part of a kid's day, and because we go to the community instead of renting a building, every dollar goes into the program — not the rent.</p>
+      </div>
+      <div class="three">
+        <div class="tcard rv" style="--c:var(--coral)"><div class="n">01</div><h3>A real curriculum, not babysitting</h3><p>Every day has a theme and a destination — actual instructors, actual skills, actual progress kids are proud of.</p></div>
+        <div class="tcard rv" style="--c:var(--sun)"><div class="n">02</div><h3>The whole town is our classroom</h3><p>Pools, rinks, studios, libraries, trails, community centres — venues that sit half-empty from 3 to 5 become our campus. No rent, no walls.</p></div>
+        <div class="tcard rv" style="--c:var(--teal)"><div class="n">03</div><h3>Shared ride, shared cost</h3><p>One small crew of kids from one or two schools shares a caregiver, a van, and the cost — private-nanny quality at a fraction of the price.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW / WEEK -->
+  <section id="how" class="blk" style="background:#FFF3E0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="rv" style="text-align:center;max-width:60ch;margin:0 auto">
+        <div class="eyebrow">A sample week</div>
+        <h2 class="lead" style="margin:14px auto 12px">Pickup at 3. Adventure till 5.</h2>
+        <p class="maxread" style="margin:0 auto">We meet kids at the school door, take attendance, and roll. Parents get a ping at pickup and at drop-off. Rotations change with the season.</p>
+      </div>
+      <div class="week">
+        <div class="day rv"><span class="lbl" style="background:#FDE8E2;color:#D5502F">Mon</span><div class="emoji">🏊</div><h3>Splash</h3><p>Swim lessons at the community pool</p></div>
+        <div class="day rv"><span class="lbl" style="background:#FFF1D6;color:#B5872B">Tue</span><div class="emoji">🎨</div><h3>Studio</h3><p>Art &amp; making at the rec-centre studio</p></div>
+        <div class="day rv"><span class="lbl" style="background:#DDF5F0;color:#0A8F7A">Wed</span><div class="emoji">🎵</div><h3>Jam</h3><p>Music — rhythm, ukulele, sing-alongs</p></div>
+        <div class="day rv"><span class="lbl" style="background:#E2F1FC;color:#1E6FAE">Thu</span><div class="emoji">⚽</div><h3>Play</h3><p>Sport &amp; games — field, court, or rink</p></div>
+        <div class="day rv"><span class="lbl" style="background:#ECE6FC;color:#6A50D0">Fri</span><div class="emoji">🔭</div><h3>Wonder</h3><p>STEM, library quests &amp; nature walks</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECONOMICS -->
+  <section class="blk">
+    <div class="wrap">
+      <div class="band rv">
+        <div class="eyebrow">The napkin math</div>
+        <h2>Nanny-level attention. Group-level price.</h2>
+        <p>Hiring someone privately for the 3-to-5 gap runs about $1,000 a month per family. Share the caregiver, the van, and the adventures across a small crew, and the same enriched two hours costs a fraction — with more fun, because friends came along.</p>
+        <div class="mathrow">
+          <div class="m"><div class="big">6–8</div><div class="sm">Kids per crew · one or two nearby schools</div></div>
+          <div class="m"><div class="big">10 hrs</div><div class="sm">Of enrichment every week · Mon–Fri, 3–5pm</div></div>
+          <div class="m"><div class="big">~$0</div><div class="sm">Spent on rent · the community is the venue</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="blk" style="padding-top:0">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Built on trust</div>
+        <h2 class="lead">Boringly serious about the safety part.</h2>
+        <p class="maxread">The fun only works if the foundation is airtight. Enrich is being designed from day one around BC's child-care licensing and passenger-transport rules — not around loopholes.</p>
+        <div class="safety rv">
+          <span class="schip">🪪 Licensed school-age program</span>
+          <span class="schip">🚐 Class 4 licensed drivers</span>
+          <span class="schip">👥 Staffed ratios on every ride</span>
+          <span class="schip">✅ Criminal record checks</span>
+          <span class="schip">⛑️ First-aid certified</span>
+          <span class="schip">📍 Live pickup &amp; drop-off alerts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="contact" style="background:#FFF3E0;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="eyebrow rv">Get on board</div>
+      <h2 class="rv">Want your 3-to-5 back — and better?</h2>
+      <p class="rv">We're gauging interest from Tsawwassen and South Delta families before the first van rolls. Tell us your school and your kid's age — founding families shape the program (and get first seats).</p>
+      <div class="rv cta-row">
+        <a class="btn btn-primary" href="mailto:hello@mvpocean.com?subject=Enrich%20waitlist&body=School%3A%0AChild%27s%20age%3A%0ADays%20needed%3A">Join the waitlist</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Enrich · an <a href="/">MVP Ocean</a> venture · Tsawwassen, BC
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
