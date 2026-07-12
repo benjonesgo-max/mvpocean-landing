@@ -109,6 +109,17 @@
   .why p{color:var(--ink-soft);font-size:15px;margin-top:8px}
   .why .n{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--blue)}
 
+  /* EXPLAINER VIDEO */
+  .vsplit{align-items:center}
+  .videocard{position:relative;display:block;width:100%;max-width:318px;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .22s,box-shadow .22s}
+  .videocard:hover,.videocard:focus-visible{transform:translateY(-4px);box-shadow:0 24px 52px rgba(10,26,42,.16)}
+  .videocard .vscene{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .videocard .dur{position:absolute;top:12px;right:12px;z-index:2;font-size:12px;font-weight:600;color:#fff;background:rgba(10,26,42,.58);padding:3px 9px;border-radius:999px}
+  .videocard .play{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);z-index:2;width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:0 12px 30px rgba(10,26,42,.3);transition:transform .2s}
+  .videocard:hover .play{transform:translate(-50%,-50%) scale(1.07)}
+  .videocard .play svg{margin-left:4px;color:var(--blue)}
+  .videocard .vcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:46px 18px 18px;color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:21px;line-height:1.1;background:linear-gradient(transparent,rgba(10,26,42,.58))}
+
   .contact{text-align:center;padding:96px 0}
   .contact h2{font-size:clamp(30px,4vw,52px);max-width:18ch;margin:14px auto 16px}
   .contact p{color:var(--ink-soft);font-size:18px;max-width:52ch;margin:0 auto 30px}
@@ -201,6 +212,52 @@
         <div class="thesis-card"><h3>Many shots, shared playbook</h3><p>Every venture reuses the same build-and-validate engine, so the marginal cost of the next idea is low and each win compounds the studio.</p></div>
         <div class="thesis-card"><h3>Not one industry</h3><p>From market intelligence to consumer platforms to services — we follow demand, not a single vertical.</p></div>
         <div class="thesis-card"><h3>Proof before spend</h3><p>Capital goes to what's already pulling real customers. We fund traction, not slideware.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLAINER VIDEO -->
+  <section id="explainer" class="blk" style="padding-top:40px">
+    <div class="wrap split vsplit">
+      <div class="rv">
+        <div class="eyebrow">The idea, in 26 seconds</div>
+        <h2 class="lead">Test before you build.</h2>
+        <p class="maxread">The whole playbook in one short explainer: an MVP is the smallest thing a real person can say <em>yes</em> or <em>no</em> to — a test, not a prototype. Here's how we pressure-test an idea before a line of code gets written.</p>
+        <div style="margin-top:24px">
+          <a class="btn btn-primary btn-lg" href="/mvp-video">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M3 2l9 5-9 5V2z"/></svg>
+            Watch the explainer
+          </a>
+        </div>
+      </div>
+      <div class="rv" style="display:flex;justify-content:center">
+        <a class="videocard" href="/mvp-video" aria-label="Watch the MVP Ocean explainer video, 26 seconds">
+          <svg class="vscene" viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="270" height="480" fill="#ece2cf"/>
+            <rect y="360" width="270" height="120" fill="#caa06d"/>
+            <rect y="360" width="270" height="6" fill="#b98d58"/>
+            <!-- glowing lightbulb with the MVP Ocean wave mark -->
+            <circle cx="198" cy="112" r="60" fill="#ffe07a" opacity="0.4"/>
+            <circle cx="198" cy="110" r="40" fill="#ffd94a" stroke="#20242b" stroke-width="4"/>
+            <path d="M181 110c4-3 8-3 12 0s8 3 12 0" fill="none" stroke="#20242b" stroke-width="3.6" stroke-linecap="round"/>
+            <rect x="189" y="148" width="18" height="12" rx="3" fill="#c9c9c9" stroke="#20242b" stroke-width="3"/>
+            <!-- stick figure -->
+            <g stroke="#20242b" stroke-width="5" stroke-linecap="round" fill="none">
+              <line x1="62" y1="296" x2="55" y2="358"/>
+              <line x1="80" y1="296" x2="87" y2="358"/>
+              <line x1="57" y1="246" x2="40" y2="278"/>
+              <line x1="85" y1="246" x2="106" y2="224"/>
+            </g>
+            <path d="M57 238c-6-1-7 7-7 17l5 40q16 8 32 0l5-40c0-10-1-18-7-17q-16 6-33 0z" fill="#2f6fd0" stroke="#20242b" stroke-width="4"/>
+            <circle cx="71" cy="208" r="28" fill="#fdfdfb" stroke="#20242b" stroke-width="5"/>
+            <circle cx="64" cy="206" r="3.4" fill="#20242b"/>
+            <circle cx="78" cy="206" r="3.4" fill="#20242b"/>
+            <path d="M64 219 q7 5 14 0" fill="none" stroke="#20242b" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="dur">0:26</span>
+          <span class="play"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8V4z"/></svg></span>
+          <span class="vcap">Test before you build</span>
+        </a>
       </div>
     </div>
   </section>
